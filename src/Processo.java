@@ -22,7 +22,7 @@ public class Processo {
     }
 
     public void executarInstrucao() {
-        if(isFinalizdo()){
+        if(isFinalizado()){
             throw new IllegalStateException("Processo já finalizado.");
         }
 
@@ -34,7 +34,7 @@ public class Processo {
     }
 
     //saber o estado do processo
-    public boolean isFinalizdo(){
+    public boolean isFinalizado(){
         return this.quantidadeInstrucoes == 0;
     }
 

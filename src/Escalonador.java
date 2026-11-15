@@ -40,6 +40,16 @@ public class Escalonador {
         filaProcessos.add(p);
     }
 
+    public boolean temProcessosAguardando(){ return !filaProcessos.isEmpty(); };
+
+    public void getProcessos(){
+        System.out.println("=== PROCESSOS AGUARDANDO ===");
+
+        for(Processo p : filaProcessos){
+            System.out.println(p);
+        }
+    }
+
     // algoritmos de decisão
     public Processo removePrimeiroDaFila(){
         if(filaProcessos.isEmpty()) {
