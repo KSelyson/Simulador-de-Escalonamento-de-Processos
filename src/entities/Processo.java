@@ -1,3 +1,5 @@
+package entities;
+
 public class Processo {
 
     // atributos
@@ -23,7 +25,7 @@ public class Processo {
 
     public void executarInstrucao() {
         if(isFinalizado()){
-            throw new IllegalStateException("Processo já finalizado.");
+            throw new IllegalStateException("\nProcesso já finalizado.");
         }
 
         this.quantidadeInstrucoes--;

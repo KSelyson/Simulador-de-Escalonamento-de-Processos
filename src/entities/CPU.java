@@ -1,4 +1,6 @@
-import enums.ConfigAlgoritmo;
+package entities;
+
+import entities.enums.ConfigAlgoritmo;
 
 import java.util.ArrayList;
 
@@ -16,9 +18,20 @@ public class CPU {
 
     //primario
     public void executarSimulacao(){
-        while(escalonador.temProcessosAguardando()){ //garante que o programa trabalhe e mostre os processsos atuais
+        while(escalonador.temProcessosAguardando()
+                && !Thread.currentThread().isInterrupted()){ //garante que o programa trabalhe e mostre os processsos atuais
+
             executarRodada();
             escalonador.getProcessos();
+
+            try{
+                Thread.sleep(5000);
+            } catch (InterruptedException e){
+                Thread.currentThread().interrupt();
+                System.out.println("\nExecução interrompida");
+                break;
+            }
+
         }
 
         System.out.println("\n=== PROCESSOS FINALIZADO ==="); // quando terminar, mostrar a lista final
@@ -51,7 +64,7 @@ public class CPU {
 
         if(processoAtual.isFinalizado()){
             processosFinalizados.add(processoAtual); //se tiver finalizado já adiciona na lista com estado finalizado
-            System.out.println("Processo finalizado com PID "+ processoAtual.getId());
+            System.out.println("\nProcesso finalizado com PID "+ processoAtual.getId());
         } else {
             escalonador.adicionarProcesso(processoAtual); //se não, joga de volta la no escalonador pra fzr a seleção
         }

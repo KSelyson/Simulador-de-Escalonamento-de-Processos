@@ -1,4 +1,6 @@
-import enums.ConfigAlgoritmo;
+package entities;
+
+import entities.enums.ConfigAlgoritmo;
 
 import java.util.ArrayList;
 
@@ -43,7 +45,7 @@ public class Escalonador {
     public boolean temProcessosAguardando(){ return !filaProcessos.isEmpty(); };
 
     public void getProcessos(){
-        System.out.println("=== PROCESSOS AGUARDANDO ===");
+        System.out.println("\n=== PROCESSOS AGUARDANDO ===");
 
         for(Processo p : filaProcessos){
             System.out.println(p);

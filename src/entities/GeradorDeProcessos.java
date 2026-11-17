@@ -1,4 +1,4 @@
-
+package entities;
 
 public class GeradorDeProcessos {
     private static int contadorId = 1;
