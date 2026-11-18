@@ -1,4 +1,4 @@
-# Simulador de Escalonamento de Processos
+# 💻 Simulador de Escalonamento de Processos
 
 Simulador em **Java** que demonstra o funcionamento de quatro algoritmos clássicos de escalonamento de processos em uma CPU: **FCFS**, **SJF**, **Round Robin** e **Prioridade**. Projeto desenvolvido para a disciplina de Sistemas Operacionais.
 
